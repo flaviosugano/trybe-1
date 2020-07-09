@@ -1,0 +1,98 @@
+h2, h3 {
+    color:rgb(10, 104, 10);
+    font-family: monospace;
+}
+
+p {
+    color: blue;
+    font-family: "Helvetica", sans-serif;
+}
+
+body {
+    background-color: rgb(233, 159, 109);
+    font-size: 12px;
+}
+
+.song-lyrics {
+    color: purple;
+    background-color: yellow;
+    font-family: monospace;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+#menu {
+    background-color:rgb(253, 112, 87);
+    text-align: center;
+}
+
+#info {
+    font-weight: bold;
+}
+
+span{
+    color: red;
+}
+
+#song-box{
+    background-color: rgb(216, 140, 85);
+    width: 500px;
+    height: 200px;
+    overflow: auto;
+    border: 3px dotted gray;
+    text-align: center;
+}
+
+img{
+    width: 200px;
+    border-radius: 20%;
+    border: 10px ridge red;
+    position: absolute;
+    right: 28%;
+    top: 28%;
+}
+
+#container{
+    width: 500px;
+    margin: auto;
+    border: 2px solid purple;
+    padding: 10px 50px;
+}
+
+h1{
+    position: relative;
+    left:30%;
+}
+
+.warning{
+    font-weight: bold;
+    color: black;
+}
+
+strong.warning{
+    background-color: red;
+    border: 2px solid green;
+}
+
+.mutt{
+ background-color: green;
+}
+
+.labrador{
+    background-color: blue;
+}
+
+.pitbull{
+    background-color: red;
+}
+
+p .pitbull{
+    color: white;
+    background-color: transparent;
+}
+
+a:hover, a:active, a:focus {
+    background-color:rgb(155, 224, 167);
+}
