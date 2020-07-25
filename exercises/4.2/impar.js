@@ -8,7 +8,7 @@ for (let i = 0; i < numbers.length; i += 1){
 }
 
 if (numImpar > 0) {
-    console.log("Tem um total de: " + numImpar + " números pares");
+    console.log("Tem um total de: " + numImpar + " números ímpares");
 } else {
     console.log("Nenhum valor ímpar encontrado");
 }
