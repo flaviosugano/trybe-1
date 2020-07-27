@@ -1,20 +1,21 @@
-let base = 7;
+let row = 4;
+let column = 7;
 let line = '';
-
-let midOfTriangle = (base + 1)/ 2;
-let leftSide = midOfTriangle;
-let rightSide = midOfTriangle;
-
-for (let index = 0; index <= midOfTriangle; index++){
-  for (let column = 1; column <= base; column++){
-      if (column > rightSide && column < leftSide){
+// necessita uma lógica para saber o resultado correto
+//da soma e subtração de linhas e colunas
+for (let indexLine = 1; indexLine <= row; indexLine++){
+  for (let indexColumn = 1; indexColumn <= column; indexColumn++){
+      if (indexLine === row ){
         line += '*';   
+      } else if (indexLine + indexColumn == 5) {
+        line += '*';
+      } else if (indexColumn - indexLine == 3){
+        line += '*';
       } else {
         line += ' ';
       }
   }
   console.log(line);
   line = '';
-  rightSide--;
-  leftSide++;
 }
+
