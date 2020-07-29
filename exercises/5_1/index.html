@@ -1,11 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.1</title>
+
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 class="title">Exercício 5.1 - JavaEscripito </h1>
+    <div class="main-content">
+      <div class="center-content">
+        <p>Texto padrão do nosso site</p>
+        <p>-----</p>
+        <p>Trybe</p>
+      </div>
+    </div>
+
+    <script>
+        /*
+        Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
+        - document.getElementById()
+        - document.getElementsByClassName()
+        - document.getElementsByTagName()
+*/
+
+  // Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos.
+  function changeP() {
+    let paragraph = document.getElementsByTagName('p')[1];
+    paragraph.innerHTML = "Eu me vejo trabalhando e viajando o mundo com minha família.";
+  }
+  changeP();
+
+  // Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
+  function changeSideColor() {
+    let sideBox = document.getElementsByClassName('main-content')[0];
+    sideBox.style.background = "rgb(76,164,109)";
+  }
+  changeSideColor();
+
+// Crie uma função que mude a cor do quadrado vermelho para branco.
+  function changeMidColor() {
+    let midBox = document.getElementsByClassName('center-content')[0];
+    midBox.style.background = 'white';
+  }
+  changeMidColor();
+
+// Crie uma função que corrija o texto da tag <h1>.
+  function correctH1() {
+    let h1 = document.getElementsByTagName('h1')[0];
+    h1.innerHTML = "Exercício 5.1 - JavaScript";
+  }
+  correctH1();
+  
+// Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+  function toUpper(){
+    let allParagraph = document.getElementsByTagName('p')[0];
+    allParagraph.innerHTML = allParagraph.innerHTML.toUpperCase(); 
+
+    // for(let index = 0; index < allParagraph.length; index++){
+    //   allParagraph[index].innerHTML = allParagraph[index].innerHTML.toUpperCase();
+    // }
+    // Aqui seria para modificar todas as tags p
+  }
+  toUpper();
+
+// Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+  function showParagraph() {
+    let paragraph = document.getElementsByTagName('p');
+    console.log(paragraph.length);
+
+    for(let index = 0; index < paragraph.length; index++){
+      console.log(paragraph[index].innerHTML);
+    }
+  }
+  showParagraph();  
+    </script>
+  </body>
 </html>
