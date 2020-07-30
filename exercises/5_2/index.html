@@ -107,9 +107,9 @@
      rightContent.appendChild(ul);
 
      // Exercise - 9
-     for (let i = 0; i < 3; i += 1){
+     for (let i = 1; i <= 3; i += 1){
         let h3 = document.createElement('h3');
-        h3.innerHTML = 'Sehr gut ' + i;
+        h3.innerHTML = i + ' Sehr gut';
         mainContent.appendChild(h3);
      }
 
@@ -132,6 +132,8 @@
      mainContent.style.background = 'lightGreen';
      
      // Exercise - 6
+    ul.lastChild.remove();
+    ul.lastChild.remove();
     </script>
   </body>
 </html>
