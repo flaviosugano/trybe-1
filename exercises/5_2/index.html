@@ -58,19 +58,57 @@
   <body>
     <script>
       // COLOQUE SEU CÓDIGO AQUI
-      let body = document.querySelector('body');
-    
-      let h1 = document.createElement('h1');
+      const body = document.querySelector('body');
+      
+      // Exercise - 1
+      const h1 = document.createElement('h1');
       h1.innerHTML = 'Exercício 5.2 - JavaScript DOM'
       body.appendChild(h1);
 
-      let mainContent = document.createElement('div');
-      mainContent.classList.add('main-content');
+      // Exercise - 2
+      const mainContent = document.createElement('div');
+      mainContent.className = 'main-content';
       body.appendChild(mainContent);
 
-      let centerContent = document.createElement('div');
-      centerContent.classList.add('center-content');
+      // Exercise - 3
+      const centerContent = document.createElement('div');
+      centerContent.className = 'center-content';
       mainContent.appendChild(centerContent);
+
+      // Exercise - 4
+      const text = document.createElement('p');
+      text.innerHTML = 'Texo exemplo para preencher linguiça';
+      centerContent.appendChild(text);
+
+      // Exercise - 5
+      const leftContent = document.createElement('div');
+      leftContent.className = 'left-content';
+      mainContent.appendChild(leftContent);
+
+     // Exercise - 6
+     const rightContent = document.createElement('div');
+     rightContent.className = 'right-content';
+     mainContent.appendChild(rightContent);
+
+     // Exercise - 7
+     const img = document.createElement('img');
+     img.src = "https://picsum.photos/200";
+     img.className = 'small-image';
+     leftContent.appendChild(img);
+
+     // Exercise - 8
+     const ul = document.createElement('ul');
+     let array = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+     for (i = 0; i < array.length; i += 1){
+        let li = document.createElement('li')
+        li.innerHTML = array[i];
+        ul.appendChild(li);
+     }
+     rightContent.appendChild(ul);
+
+     // Exercise - 6
+     // Exercise - 6
+     // Exercise - 6     
 
     </script>
   </body>
