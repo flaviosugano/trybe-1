@@ -59,7 +59,7 @@
     <script>
       // COLOQUE SEU CÓDIGO AQUI
       let body = document.querySelector('body');
-
+    
       let h1 = document.createElement('h1');
       h1.innerHTML = 'Exercício 5.2 - JavaScript DOM'
       body.appendChild(h1);
@@ -67,7 +67,10 @@
       let mainContent = document.createElement('div');
       mainContent.classList.add('main-content');
       body.appendChild(mainContent);
-      
+
+      let centerContent = document.createElement('div');
+      centerContent.classList.add('center-content');
+      mainContent.appendChild(centerContent);
 
     </script>
   </body>
