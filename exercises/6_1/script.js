@@ -16,36 +16,51 @@ function createState (){
 }
 
 let date = document.querySelector('#date');
-console.log(date);
-let dateValue = document.querySelector('#date').value;
+date.addEventListener('change', compareDate);
 
 function compareDate() {
-    console.log(dateValue);
+    let dateValue = document.querySelector('#date').value;
     let formato = dateValue.split('');
-    console.log(formato);
     if (formato[2] !== '/'  && formato[5] !== '/'){
         alert('Formato da data inválido');
     }
+
     let parts = dateValue.split('/')
 
     if (parts[0] > 31 || parts[0] <= 0){
-      // alert('Dia inválido');
+      alert('Dia inválido');
       console.log('dia');
     }
     if (parts[1] > 12 || parts[1] <= 0){
-      // alert('Mês inválido');
+      alert('Mês inválido');
       console.log('mês');
     }
     if (parts[2] <= 0){
-      // alert('Ano inválido'); 
+      alert('Ano inválido'); 
       console.log('ano');
     }  
+}
+
+
+function cvForm(event){
+  const formElements = document.getElementById('cvForm').elements;
+  const divDados = document.querySelector('#summary');
+  
+
+  for (let i = 0; i < formElements.length; i++){
+    if (formElements[i].tagName !== 'FIELDSET' && formElements[i].tagName !== 'BUTTON'){
+      console.log(formElements[i].value);
+      let dados = document.createElement('p');
+      dados.innerHTML += formElements[i].value;
+      divDados.appendChild(dados);
+    } 
+  }
 }
 
 let btn = document.querySelector('#button');
 btn.addEventListener('click', function(event){
     event.preventDefault();
-    compareDate();
+    cvForm();
 });
 
 
