@@ -16,34 +16,36 @@ function createState (){
 }
 
 let date = document.querySelector('#date');
+console.log(date);
 let dateValue = document.querySelector('#date').value;
-// console.log(dateValue.value);
 
 function compareDate() {
-  console.log(dateValue);
+    console.log(dateValue);
     let formato = dateValue.split('');
+    console.log(formato);
     if (formato[2] !== '/'  && formato[5] !== '/'){
         alert('Formato da data inválido');
     }
-
     let parts = dateValue.split('/')
 
     if (parts[0] > 31 || parts[0] <= 0){
-      alert('Dia inválido');
+      // alert('Dia inválido');
+      console.log('dia');
     }
-
     if (parts[1] > 12 || parts[1] <= 0){
-      alert('Mês inválido');
+      // alert('Mês inválido');
+      console.log('mês');
     }
     if (parts[2] <= 0){
-      alert('Ano inválido'); 
+      // alert('Ano inválido'); 
+      console.log('ano');
     }  
 }
-date.addEventListener('change', compareDate);
 
 let btn = document.querySelector('#button');
 btn.addEventListener('click', function(event){
     event.preventDefault();
+    compareDate();
 });
 
 
