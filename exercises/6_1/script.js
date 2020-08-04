@@ -42,14 +42,25 @@ function compareDate() {
 }
 
 
-function cvForm(event){
+function cvFormFunction(event){
   const formElements = document.getElementById('cvForm').elements;
   const divDados = document.querySelector('#summary');
-  
+  console.log(formElements);
 
   for (let i = 0; i < formElements.length; i++){
+    
     if (formElements[i].tagName !== 'FIELDSET' && formElements[i].tagName !== 'BUTTON'){
-      console.log(formElements[i].value);
+      // console.log(formElements[i].value);
+      
+      if (formElements[i] === document.getElementById('moradia')){
+        // console.log(document.querySelector('#moradia').value);
+        let dados = document.createElement('p');
+        dados.innerHTML += formElements[i].value;
+        divDados.appendChild(dados);
+      } else {
+        console.log('não marcado');
+      }
+      
       let dados = document.createElement('p');
       dados.innerHTML += formElements[i].value;
       divDados.appendChild(dados);
@@ -60,7 +71,12 @@ function cvForm(event){
 let btn = document.querySelector('#button');
 btn.addEventListener('click', function(event){
     event.preventDefault();
-    cvForm();
+    cvFormFunction();
 });
+
+let clearBtn = document.querySelector('#clear');
+clearBtn.addEventListener('click', function(){
+  document.getElementById("cvForm").reset();
+})
 
 
