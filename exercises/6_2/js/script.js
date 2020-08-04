@@ -18,74 +18,26 @@ function createState (){
 
 var picker = new Pikaday({ field: document.getElementById('datepicker') });
 
-// let date = document.querySelector('#date');
-// date.addEventListener('change', compareDate);
-
-// function compareDate() {
-//     let dateValue = document.querySelector('#date').value;
-//     let formato = dateValue.split('');
-//     if (formato[2] !== '/'  && formato[5] !== '/'){
-//         alert('Formato da data inválido');
-//     }
-
-//     let parts = dateValue.split('/')
-
-//     if (parts[0] > 31 || parts[0] <= 0){
-//       alert('Dia inválido');
-//       console.log('dia');
-//     }
-//     if (parts[1] > 12 || parts[1] <= 0){
-//       alert('Mês inválido');
-//       console.log('mês');
-//     }
-//     if (parts[2] <= 0){
-//       alert('Ano inválido'); 
-//       console.log('ano');
-//     }  
-// }
-
-
-new window.JustValidate('.cvForm', {
-  Rules: {
+window.onload = function () {
+new JustValidate('.cvForm', {
+  rules: {
     email: {
-        required: true,
-        email: true
-    },
-    name: {
-        required: true,
-        minLength: 3,
-        maxLength: 15
-    },
-    cpf: {
-        required: true,
-        maxLength: 11,
-        minLength: 5
-    },
-    endereco: {
-        required: true,
-        minLength: 200,
-        maxLength: 8
-    },
-    cidade: {
       required: true,
+      email: true
     },
-    cv: {
-      required: true,
-      minLength: 200,
-      maxLength: 1000
+  messages: {
+    email: {
+      email: 'Email inválido',
+      required: 'Email necessário'
     },
-    cargo: {
-      required: true,
-      maxLength: 40
-    },
-    descricaoCargo: {
-      required: true,
-      maxLength: 500
-    },
-
+  
+  submitHandler: function (form, values) {
+    console.log(form, values);
+  },
+   }
+  }
+ });
 }
-});
-
 
 // function cvForm(event){
 //   const formElements = document.getElementById('cvForm').elements;
@@ -107,5 +59,3 @@ new window.JustValidate('.cvForm', {
 //     event.preventDefault();
 //     cvForm();
 // });
-
-
