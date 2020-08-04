@@ -45,28 +45,38 @@ function compareDate() {
 function cvFormFunction(event){
   const formElements = document.getElementById('cvForm').elements;
   const divDados = document.querySelector('#summary');
-  console.log(formElements);
+  // console.log(formElements);
 
-  for (let i = 0; i < formElements.length; i++){
-    
-    if (formElements[i].tagName !== 'FIELDSET' && formElements[i].tagName !== 'BUTTON'){
-      // console.log(formElements[i].value);
       
-      if (formElements[i] === document.getElementById('moradia')){
-        // console.log(document.querySelector('#moradia').value);
+    for (let i = 0; i < formElements.length; i++){
+      if (formElements[i].tagName !== 'FIELDSET' && formElements[i].tagName !== 'BUTTON'){
+        console.log(formElements[i].value);
+
         let dados = document.createElement('p');
-        dados.innerHTML += formElements[i].value;
+
+        // checa se o elemento da vez é um input, do tipo radio e está selecionado.
+        if (formElements[i].tagName == 'INPUT' && formElements[i].type == 'radio' && formElements[i].checked) {
+          // Caso seja fazemos esse mapeamento usando esse objeto para saber o que vai ser apresentado de acordo com o value.
+          const values = {"apt": "Apartamento", "casa": "Casa"}
+          // Exibiremos de acordo com o valor do radio que está checado
+          dados.innerHTML += values[formElements[i].value];
+        } else {
+          // Para evitar que o valor do elemento radio que não está selecionado seja exibido fazemos esse if para não exibir o valor dos inputs do tip radio.
+          if (formElements[i].tagName == 'INPUT' && formElements[i].type !== 'radio') {
+            dados.innerHTML += formElements[i].value;  
+          }  
+        }
+
+        if (formElements[i].tagName == 'SELECT' || formElements[i].tagName == 'TEXTAREA') {
+          dados.innerHTML += formElements[i].value; 
+        }  
+        
         divDados.appendChild(dados);
-      } else {
-        console.log('não marcado');
-      }
-      
-      let dados = document.createElement('p');
-      dados.innerHTML += formElements[i].value;
-      divDados.appendChild(dados);
+      } 
+    }
+  
     } 
-  }
-}
+
 
 let btn = document.querySelector('#button');
 btn.addEventListener('click', function(event){
@@ -79,4 +89,14 @@ clearBtn.addEventListener('click', function(){
   document.getElementById("cvForm").reset();
 })
 
+
+
+  // for (let i = 0; i < formElements.length; i++){
+  //   if (formElements[i].tagName !== 'FIELDSET' && formElements[i].tagName !== 'BUTTON'){
+      // console.log(formElements[i].value);
+
+    
+      // let dados = document.createElement('p');
+      // dados.innerHTML += formElements[i].value;
+      // divDados.appendChild(dados);
 
