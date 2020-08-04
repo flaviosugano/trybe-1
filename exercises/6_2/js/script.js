@@ -15,29 +15,24 @@ function createState (){
     return stateItem;
 }
 
-
 var picker = new Pikaday({ field: document.getElementById('datepicker') });
 
-window.onload = function () {
+
 new JustValidate('.cvForm', {
   rules: {
     email: {
-      required: true,
+      required: false,
       email: true
     },
   messages: {
-    email: {
-      email: 'Email inválido',
-      required: 'Email necessário'
-    },
-  
-  submitHandler: function (form, values) {
-    console.log(form, values);
+    email: 'Email inválido',
+    required: 'Email obrigatório'
   },
-   }
-  }
- });
+  submitHandler: function (form, values) {
+  },
 }
+})
+
 
 // function cvForm(event){
 //   const formElements = document.getElementById('cvForm').elements;
