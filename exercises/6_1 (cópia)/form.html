@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Meu Formulário</h1>
+    <p>Este é um formulário de exemplo</p>
+
+    <form action="" method="" enctype="multipart/form-data">
+      
+      <div>
+        <label for="">Nome</label>
+        <input name="nome" required="required" type="text" placeholder="Digite seu nome">
+      </div>
+
+      <div>
+        <label for="">E-mail</label>
+        <input name="email" required="required" type="email" placeholder="Digite seu email">
+      </div>
+
+      <div>
+        <label for="">Selecione sua cidade</label>
+        <select name="cidade" required="required">
+          <option selected="selected" value="">Selecione</option>
+          <option value="1">Manaus</option>
+          <option value="2">Belém</option>
+          <option value="3">Recife</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="">Sua foto</label>
+        <input required="required" name="foto" type="file">
+      </div>
+
+      <div>
+        <p>Selecione seu sexo:</p>
+        <label for="sexo1"><input id="sexo1" required="required" value="m" name="sexo" type="radio"> Masculino</label>
+        <label for="sexo2"><input id="sexo2" required="required" value="f" name="sexo" type="radio"> Feminino</label>
+      </div>
+      
+      <div>
+        <label for="">Biografia</label><br>
+        <textarea required="required" 
+       cols="30" rows="5" name="biografia"  placeholder="Digite aqui sua biografia"></textarea>
+      </div>
+
+      <div>
+        <label for="">Senha</label>
+        <input required="required" name="senha" type="password" placeholder="Digite sua senha">
+      </div>
+
+      <div>
+        <label for="checkbox"> <input id="checkbox" name="" type="checkbox"> Deseja receber emails promocionais e notícias?</label>
+      </div>
+
+      <div>
+        <button name="enviar" value="1" type="submit">Enviar</button>
+      </div>
+
+    </form>
+
+
+
+
+</body>
+</html>
