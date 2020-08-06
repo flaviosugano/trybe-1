@@ -22,7 +22,14 @@ figure {
 
 body{
   font-size: 1.3em;
-}    
+}   
+
+.container{
+    width: 60%;
+    margin: 0px auto;
+    text-align: center;
+
+}
 
 
     
