@@ -33,6 +33,7 @@ window.onload = function(){
     },
     submitHandler: function (form, values) {
       console.log(form, values);
+      cvFormFunction();
     },
   })
 }
@@ -101,15 +102,20 @@ function cvFormFunction(event){
 } 
 
 
-let btn = document.querySelector('#button');
-btn.addEventListener('click', function(event){
-    event.preventDefault();
-    cvFormFunction();
-});
+// let btn = document.querySelector('#button');
+// btn.addEventListener('click', function(event){
+//     // event.preventDefault();
+//     cvFormFunction();
+// });
 
 let clearBtn = document.querySelector('#clear');
 clearBtn.addEventListener('click', function(){
-  document.getElementById("cvForm").reset();
+  // document.getElementById("cvForm").reset();
+
+  let cleanP = document.querySelectorAll('p');
+  for (let i = 0; i < cleanP.length; i++){
+    cleanP[i].remove();
+  }
 })
 
 

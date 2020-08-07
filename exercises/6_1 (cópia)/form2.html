@@ -5,43 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <link rel="stylesheet" type="text/css" href="css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form action="" method="GET" id="cvForm" class="cvForm">
+    <header>
+      <h1>Formulário</h1>
+      <h3>Saiba mais sobre esse novo projeto!</h3>
+    </header>
+    <h2>Inscreva-se!</h2>
+    <form action="" id="cvForm" class="cvForm">
         <fieldset>
             
             <div>
-            <label>Nome</label>
-            <input name="nome" type="text" maxlength="40" required="required">
+            <label class="label">Nome</label>
+            <input class="input is-info" name="nome" type="text" maxlength="40" required="required">
             </div>
 
             <div>
-            <label>Email</label>
-            <input name="email" type="text" maxlength="50" data-validate-field="email">
+            <label class="label">Email</label>
+            <input class="input is-info" name="email" type="text" maxlength="50" data-validate-field="email">
             </div>
 
             <div>
-            <label>CPF</label>
-            <input name="cpf" type="text" maxlength="11" required="required">
+            <label class="label">CPF</label>
+            <input class="input is-info" name="cpf" type="text" maxlength="11" required="required">
             </div>
 
             <div>
-            <label>Endereço</label>
-            <input name="endereco" type="text" maxlength="200" required="required">
+            <label class="label ">Endereço</label>
+            <input class="input is-info" name="endereco" type="text" maxlength="200" required="required">
             </div>
 
             <div>
-            <label>Cidade</label>
-            <input name="cidade" type="text" maxlength="28" required="required">
+            <label class="label">Cidade</label>
+            <input class="input is-info" name="cidade" type="text" maxlength="28" required="required">
             </div>
 
             <div>
-            <label>Estado</label>
-            <select name="estado" id="estados"></select>
+            <label class="label">Estado</label>
+            <select class="select" name="estado" id="estados"></select>
             </div>
 
             <div>
-              <p>Tipo:</p>
+              <label class="label">Tipo:</label>
               <input id="casa" value="casa" type="radio" required="required" name="moradia">
               <label for="casa">Casa</label>
               <input id="apt" value="apt" type="radio" required="required" name="moradia">
@@ -52,41 +63,42 @@
         <fieldset>
           
           <div>
-            <label>Resumo do currículo</label><br>
-            <textarea name="curriculo" placeholder="Digite o resumo do seu currículo aqui" required="required" cols="30" rows="6" maxlength="1000"></textarea>
+            <label class="label">Resumo do currículo</label><br>
+            <textarea class="textarea is-info"   name="curriculo" placeholder="Digite o resumo do seu currículo aqui" required="required" cols="30" rows="6" maxlength="1000"></textarea>
           </div>
 
           <div>
-            <label>Cargo</label>
-            <input name="cargo" required="required" maxlength="40" type="text"></input>
+            <label class="label">Cargo</label>
+            <input class="input is-info" name="cargo" required="required" maxlength="40" type="text"></input>
           </div>
 
           <div>
-            <label>Descrição do cargo</label><br>
-            <textarea name="descricao-cargo" placeholder="Descreva sua última atividade" required="required" cols="30" rows="4" maxlength="500"></textarea>
+            <label class="label">Descrição do cargo</label><br>
+            <textarea class="textarea is-info"  name="descricao-cargo" placeholder="Descreva sua última atividade" required="required" cols="30" rows="4" maxlength="500"></textarea>
           </div>
 
           <div>
-            <label>Data de início</label><br>
-            <input name="data" required="required"  id="datepicker"></input>
+            <label class="label">Data de início</label><br>
+            <input class="input is-info" name="data" required="required"  id="datepicker"></input>
           </div>
 
-          <div>
-            <button id="button" type="submit">Enviar</button>
+          <div class="botoes">
+            <button class="button is-info is-rounded is-focused" id="button" type="submit">Enviar</button>
+            <button class="button is-danger is-focused is-rounded" type="reset" name="clear" id="clear">Limpar</button>
           </div>
+         
 
           <section id="summary">
 
           </section>
 
-          <button type="button" name="clear" id="clear">Limpar</button>
         </fieldset>
-
-
     </form>
+    <footer>Desenvolvido por Alessandra Plets</footer>
+
   <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
-  <script src="just-validate.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+  <script src="js/just-validate.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
 
 </body>
 </html>
