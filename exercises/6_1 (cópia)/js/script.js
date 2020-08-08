@@ -1,3 +1,5 @@
+// Função para criar os estados
+
 state(['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goías', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraíma', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins']);
 
 function state(array){
@@ -14,7 +16,7 @@ function createState (){
     return stateItem;
 }
 
-
+// Biblioteca de data e verificação
 var picker = new Pikaday({ field: document.getElementById('datepicker') });
 
 window.onload = function(){
@@ -22,13 +24,76 @@ window.onload = function(){
     rules: {
       email: {
         required: true,
-        email: true
+        email: true,
+        maxLength: 50
+      },
+      name: {
+        required: true,
+        maxLength: 50
+      },
+      endereco: {
+        required: true,
+        maxLength: 500
+      },
+      cidade: {
+        required: true,
+        maxLength: 28
+      },
+      resumo: {
+        required: true,
+        maxLength: 1000
+      },
+      cargo: {
+        required: true,
+        maxLength: 40
+      },
+      descricaoCargo: {
+        required: true,
+        maxLength: 500
+      },
+      data: {
+        required: true
+      },
+      cpf: {
+        required: true,
+        maxLength: 11
       }
     },
     messages: {
       email: {
         email: 'Email inválido',
         required: 'Email obrigatório'
+      },
+      name: {
+        required: 'Nome obrigatório',
+        maxLength: 'Limite de 40 caracteres'
+      }, 
+      endereco: {
+        required: 'Endereço obrigatório',
+        maxLength: 'Limite de 200 caracteres'
+      },
+      cidade: {
+        required: 'Cidade obrigatória',
+        maxLength: 'Limite de 28 caracteres'
+      },
+      resumo: {
+        required: 'Resumo obrigatório',
+        maxLength: 'Limite de 1000 caracteres'
+      },
+      cargo: {
+        required: 'Cargo obrigatório',
+        maxLength: 'Limite de 40 caracteres'
+      },
+      descricaoCargo: {
+        required: 'Descrição de cargo obrigatória',
+        maxLength: 'Limite de 500 caracteres'
+      },
+      data: {
+        required: 'Data de início obrigatória'
+      },
+      cpf: {
+        required: 'CPF cargo obrigatório',
+        maxLength: 'Limite de 11 caracteres'
       }
     },
     submitHandler: function (form, values) {
@@ -98,7 +163,6 @@ function cvFormFunction(event){
         divDados.appendChild(dados);
       } 
     }
-  
 } 
 
 
@@ -108,9 +172,9 @@ function cvFormFunction(event){
 //     cvFormFunction();
 // });
 
+// Botão para Limpar os dados
 let clearBtn = document.querySelector('#clear');
 clearBtn.addEventListener('click', function(){
-  // document.getElementById("cvForm").reset();
 
   let cleanP = document.querySelectorAll('p');
   for (let i = 0; i < cleanP.length; i++){

@@ -17,38 +17,37 @@
       <h1>Formulário</h1>
       <h3>Saiba mais sobre esse novo projeto!</h3>
     </header>
-    <h2>Inscreva-se!</h2>
+    <h2><b>Inscreva-se!</b></h2>
     <form action="" id="cvForm" class="cvForm">
         <fieldset>
-            
             <div>
-            <label class="label">Nome</label>
-            <input class="input is-info" name="nome" type="text" maxlength="40" required="required">
+            <label class="label">Nome *</label>
+            <input class="input is-info" name="nome" type="text" placeholder="Nome Completo" data-validate-field="name">
             </div>
 
             <div>
-            <label class="label">Email</label>
-            <input class="input is-info" name="email" type="text" maxlength="50" data-validate-field="email">
+            <label class="label">Email *</label>
+            <input class="input is-info" name="email" type="text" data-validate-field="email" placeholder="Digite o seu melhor email">
             </div>
 
             <div>
             <label class="label">CPF</label>
-            <input class="input is-info" name="cpf" type="text" maxlength="11" required="required">
+            <input class="input is-info" name="cpf" data-validate-field="cpf" type="text" maxlength="11" required="required" placeholder="Digite o seu CPF">
             </div>
 
             <div>
-            <label class="label ">Endereço</label>
-            <input class="input is-info" name="endereco" type="text" maxlength="200" required="required">
+            <label class="label ">Endereço *</label>
+            <input class="input is-info" name="endereco" type="text" data-validate-field="endereco" placeholder="Digite o seu endereço">
             </div>
 
             <div>
-            <label class="label">Cidade</label>
-            <input class="input is-info" name="cidade" type="text" maxlength="28" required="required">
+            <label class="label">Cidade *</label>
+            <input class="input is-info" name="cidade" type="text" data-validate-field="cidade" placeholder="Digite o nome da sua cidade">
             </div>
 
             <div>
             <label class="label">Estado</label>
-            <select class="select" name="estado" id="estados"></select>
+            <select data-validate-field="estado" class="select" name="estado" id="estados"></select>
             </div>
 
             <div>
@@ -63,23 +62,23 @@
         <fieldset>
           
           <div>
-            <label class="label">Resumo do currículo</label><br>
-            <textarea class="textarea is-info"   name="curriculo" placeholder="Digite o resumo do seu currículo aqui" required="required" cols="30" rows="6" maxlength="1000"></textarea>
+            <label class="label">Resumo do currículo *</label><br>
+            <textarea class="textarea is-info"   name="curriculo" placeholder="Digite o resumo do seu currículo aqui" data-validate-field="resumo" cols="30" rows="6" ></textarea>
           </div>
 
           <div>
-            <label class="label">Cargo</label>
-            <input class="input is-info" name="cargo" required="required" maxlength="40" type="text"></input>
+            <label class="label">Cargo *</label>
+            <input class="input is-info" name="cargo" data-validate-field="cargo" type="text" placeholder="Qual foi o seu último cargo?"></input>
           </div>
 
           <div>
-            <label class="label">Descrição do cargo</label><br>
-            <textarea class="textarea is-info"  name="descricao-cargo" placeholder="Descreva sua última atividade" required="required" cols="30" rows="4" maxlength="500"></textarea>
+            <label class="label">Descrição do cargo *</label><br>
+            <textarea class="textarea is-info"  name="descricao-cargo" placeholder="Descreva sua última atividade" data-validate-field="descricaoCargo" cols="30" rows="4" ></textarea>
           </div>
 
           <div>
-            <label class="label">Data de início</label><br>
-            <input class="input is-info" name="data" required="required"  id="datepicker"></input>
+            <label class="label">Data de início *</label><br>
+            <input class="input is-info" name="data" required="required" data-validate-field="data" id="datepicker"></input>
           </div>
 
           <div class="botoes">
