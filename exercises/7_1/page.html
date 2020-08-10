@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+
+  <h1>Página de teste - button</h1>
+  <p><em>Crie um campo no HTML que vá atualizando a quantidade de clicks no botão conforme a variável clickCount é atualizada.</em></p>
+  <button id="button">Clique aqui</button>
+  <p id="numClicks"></p>
+
+  <script>
+    let btn = document.querySelector('#button');
+    let paragraph = document.querySelector('#numClicks');
+    let clickCount = 0;
+
+    btn.addEventListener('click', function(){
+      clickCount = clickCount + 1;
+      paragraph.innerHTML = `Total de ${clickCount} clicks`;
+    })
+    </script>
+</body>
+</html>
