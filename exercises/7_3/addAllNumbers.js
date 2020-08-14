@@ -1,6 +1,12 @@
 const assert = require('assert');
 // escreva a função addAllnumbers aqui
-
+let addAllnumbers = (array) => {
+  let result = 0;
+  for (let i in array){
+    result += array[i]
+  }
+  return result;
+}
 
 const numbers = [9, 23, 10, 3, 8];
 const expected = 53;
