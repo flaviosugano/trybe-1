@@ -102,3 +102,16 @@ const inClass = (obj) => {
 console.log(inClass(allLessons));
 
 // EXERCÍCIO BÔNUS 2
+
+const teacherReport = (obj, name) => {
+  let lessons = Object.values(obj);
+  const newObj = {};
+  for (let i in lessons){
+    if (lessons[i].professor === name){
+      Object.assign(newObj, lessons[i].materia, lessons[i].numeroEstudantes);
+      console.log(newObj);
+    }
+  }
+  return newObj;
+}
+console.log(teacherReport(allLessons, 'Maria Clara'));
