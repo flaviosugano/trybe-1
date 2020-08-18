@@ -63,16 +63,12 @@ const books = [
   },
 ];
 
-function smallerName(books) {
-  let nameBook = books[0].name;
-  const verifySize = (books) => {
-    if(books.name.length < nameBook.length) {
-      nameBook = books.name;
-  }
-}
-  books.forEach(verifySize)
-  console.log(nameBook);
-  return nameBook;
+const expected_result = false
+
+function everyoneWasBornOnSecXX(year) {
+  const authors =  year.every(ano => ano.birthYear <= 1901 & ano.birthYear >= 2000);
+  console.log(authors);
+  return authors;
 }
 
-assert.equal(smallerName(books), 'Duna');
+assert.equal(everyoneWasBornOnSecXX(books), expected_result);

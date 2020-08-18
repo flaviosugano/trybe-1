@@ -63,16 +63,19 @@ const books = [
   },
 ];
 
-function smallerName(books) {
-  let nameBook = books[0].name;
-  const verifySize = (books) => {
-    if(books.name.length < nameBook.length) {
-      nameBook = books.name;
+const expected_result = false;
+
+function authorUnique(books) {
+  for (let i = 0; i < books.length; i += 1){
+    for (let j = 1; j < books.length; j += 1){
+      if (books[i].author.birthYear === books[j].author.birthYear){
+        console.log(false);
+        return false;
+      }
+    }
   }
-}
-  books.forEach(verifySize)
-  console.log(nameBook);
-  return nameBook;
+  console.log(false);
+  return true;
 }
 
-assert.equal(smallerName(books), 'Duna');
+assert.equal(authorUnique(books), expected_result);

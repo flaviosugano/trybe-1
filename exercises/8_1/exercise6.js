@@ -63,16 +63,12 @@ const books = [
   },
 ];
 
-function smallerName(books) {
-  let nameBook = books[0].name;
-  const verifySize = (books) => {
-    if(books.name.length < nameBook.length) {
-      nameBook = books.name;
-  }
-}
-  books.forEach(verifySize)
-  console.log(nameBook);
-  return nameBook;
+const expected_result = true
+
+function someBookWasReleaseOnThe80s() {
+  const result = books.some((book => book.releaseYear >= 1980 && book.releaseYear <= 1989));
+  console.log(result);
+  return result;
 }
 
-assert.equal(smallerName(books), 'Duna');
+assert.equal(someBookWasReleaseOnThe80s(), expected_result);
