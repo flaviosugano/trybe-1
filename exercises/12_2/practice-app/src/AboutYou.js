@@ -6,7 +6,7 @@ class AboutYou extends React.Component{
 
     let error = undefined;
     if (value.length > 100) error = "Texto muito grande";
-    if (value.length > 100) handleError(error);
+    if (error) handleError(error);
 
     return (
       <div>
