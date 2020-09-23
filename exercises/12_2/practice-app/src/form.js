@@ -23,10 +23,8 @@ class Form extends React.Component{
     }
   }
   
-  handleError(erro) {
-    this.setState({
-      formularioComErros: erro
-    })
+  handleError(error) {
+    if (error !== undefined) this.setState({ formularioComErros: true });
   }
 
   handleEvent({ target }) {
@@ -47,7 +45,7 @@ class Form extends React.Component{
             <SelectState value={this.state.selectState} handleEvent={this.handleEvent} />
             <FavoriteState handleError={this.handleError} value={this.state.favoriteState} handleEvent={this.handleEvent} />
             <Idade value={this.state.age} handleEvent={this.handleEvent} />
-            <AboutYou value={this.state.aboutYou} handleEvent={this.handleEvent} />
+            <AboutYou value={this.state.aboutYou} handleEvent={this.handleEvent} handleError={this.handleError}/>
             <VaiComparecer value={this.state.vaiComparecer} handleEvent={this.handleEvent} />
             <legend>Envie-nos sua apresentação</legend>
             <input type="file" ref={this.fileInput}></input>

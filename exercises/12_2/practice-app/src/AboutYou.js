@@ -2,10 +2,11 @@ import React from 'react';
 
 class AboutYou extends React.Component{
   render() {
-    const { value, handleEvent } = this.props;
+    const { value, handleEvent, handleError } = this.props;
 
     let error = undefined;
     if (value.length > 100) error = "Texto muito grande";
+    if (value.length > 100) handleError(error);
 
     return (
       <div>
@@ -14,7 +15,7 @@ class AboutYou extends React.Component{
           value={value} 
           onChange={handleEvent}>
           </textarea>
-          <span>{error ? error : ''}</span>
+          {/* <span>{error ? error : ''}</span> */}
       </div>
     )
   }

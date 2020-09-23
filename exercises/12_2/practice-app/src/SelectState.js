@@ -5,7 +5,7 @@ class SelectState extends React.Component{
     const { value, handleEvent } = this.props;
     return (
       <div>
-        <legend>Escolha o estado</legend>
+        <legend>Escolha sua nacionalidade</legend>
         <select name="selectState"
         value={value}
         onChange={handleEvent}>
